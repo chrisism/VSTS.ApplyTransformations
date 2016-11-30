@@ -1,0 +1,63 @@
+{
+	"manifestVersion": 1,
+	"id": "jungit-apply-transformations",
+	"name": "Apply transformations",
+	"description": "Custom build and release tasks",
+	"version": "0.2.0",
+	"publisher": "Jungerius-IT",
+	"baseUri": "https://github.com/chrisism/VSTS.ApplyTransformations",
+	"tags": [
+		"build","transformations","transform","config"
+	],
+	"links": {
+		"home": {
+			"uri": "https://github.com/chrisism/VSTS.ApplyTransformations"
+		},
+		//"getstarted": {
+		//	"uri": "https://bit.ly"
+		//},
+		//"learn": {
+		//	"uri": "https://bit.ly"
+		//},
+		//"support": {
+		//	"uri": "https://bit.ly"
+		//},
+		//"repository": {
+		//	"uri": "https://bit.ly"
+		//},
+		//"issues": {
+		//	"uri": "https://bit.ly"
+		//}
+	},
+	"branding": {
+		"color": "rgb(220, 235, 252)",
+		"theme": "light"
+	},
+	"scopes": [ "vso.work", "vso.work_write" ],
+	"targets": [
+		{
+			"id": "Microsoft.VisualStudio.Services"
+		}
+	],
+	"categories": [
+		"Build and release"
+	],
+	"icons": {
+		"default": "task/icon.png"
+	},
+	"files": [
+		{ "path": "Task" }
+	],
+	"contributions": [
+		{
+			"id": "jungit-apply-transformations",
+			"type": "ms.vss-distributed-task.task",
+			"targets": [
+				"ms.vss-distributed-task.tasks"
+			],
+			"properties": {
+				"name": "Task"
+			}
+		}
+	]
+}
