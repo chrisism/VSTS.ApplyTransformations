@@ -2,38 +2,31 @@
 	"manifestVersion": 1,
 	"id": "jungit-apply-transformations",
 	"name": "Apply transformations",
-	"description": "Custom build and release tasks",
+	"description": "Apply transformations on config and xml files",
 	"version": "0.2.0",
-	"publisher": "Jungerius-IT",
-	"baseUri": "https://github.com/chrisism/VSTS.ApplyTransformations",
+	"publisher": "jungeriusit",
+	"baseUri": "https://github.com/chrisism/",
+	"scopes": [],
 	"tags": [
-		"build","transformations","transform","config"
+		"build",
+		"transformations",
+		"transform",
+		"config",
+		"xml"
 	],
 	"links": {
 		"home": {
 			"uri": "https://github.com/chrisism/VSTS.ApplyTransformations"
-		},
-		//"getstarted": {
-		//	"uri": "https://bit.ly"
-		//},
-		//"learn": {
-		//	"uri": "https://bit.ly"
-		//},
-		//"support": {
-		//	"uri": "https://bit.ly"
-		//},
-		//"repository": {
-		//	"uri": "https://bit.ly"
-		//},
-		//"issues": {
-		//	"uri": "https://bit.ly"
-		//}
+		}
+	},
+	"repository": {
+		"type": "git",
+		"uri": "https://github.com/chrisism/VSTS.ApplyTransformations"
 	},
 	"branding": {
 		"color": "rgb(220, 235, 252)",
 		"theme": "light"
 	},
-	"scopes": [ "vso.work", "vso.work_write" ],
 	"targets": [
 		{
 			"id": "Microsoft.VisualStudio.Services"
@@ -48,6 +41,11 @@
 	"files": [
 		{ "path": "Task" }
 	],
+	"content": {
+		"details": {
+			"path": "overview.md"
+		}
+	},
 	"contributions": [
 		{
 			"id": "jungit-apply-transformations",

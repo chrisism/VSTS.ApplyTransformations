@@ -45,6 +45,7 @@
     <Content Include="Task\ApplyTransforms.ps1" />
     <None Include="gruntfile.js" />
     <None Include="package.json" />
+    <Content Include="overview.md" />
     <None Include="vss-extension.json" />
     <None Include="settings.tfx.json" />
     <None Include=".gitignore" />
