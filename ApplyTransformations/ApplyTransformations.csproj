@@ -43,8 +43,10 @@
   <ItemGroup>
     <Content Include="Build.bat" />
     <Content Include="logo.png" />
+    <Content Include="screenshot.jpg" />
     <Content Include="Task\ApplyTransforms.ps1" />
     <None Include="gruntfile.js" />
+    <None Include="license.md" />
     <None Include="package.json" />
     <Content Include="overview.md" />
     <None Include="vss-extension.json" />
