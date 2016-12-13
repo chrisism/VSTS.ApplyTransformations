@@ -3,8 +3,9 @@
 	"id": "jungit-apply-transformations",
 	"name": "Apply transformations",
 	"description": "Apply transformations on config and xml files",
-	"version": "1.0.2",
+	"version": "1.0.3",
 	"publisher": "jungeriusit",
+	"public":  true, 
 	"baseUri": "https://github.com/chrisism/",
 	"scopes": [],
 	"tags": [
