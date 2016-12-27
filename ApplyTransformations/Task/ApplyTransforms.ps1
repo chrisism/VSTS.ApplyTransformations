@@ -1,7 +1,8 @@
 param(
     [string]$buildConfiguration,
     [string]$extension,
-    [string]$dllFolder
+    [string]$dllFolder,
+    [string]$MSBuildExePath
 )
 
 $dllFullPath = Join-Path $dllFolder "Microsoft.Web.XmlTransform.dll"
@@ -57,7 +58,7 @@ if($files)
             $BuildXml | Out-File $BuildXmlWork
 
             # call msbuild
-            & MSBuild.exe $BuildXmlWork
+            & $MSBuildExePath $BuildXmlWork
 
             # copy the output to the desired location
             Copy-Item $OutputWork $org
