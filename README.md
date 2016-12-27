@@ -14,7 +14,10 @@ release configuration you let this task transform the original config file. Afte
 
 To learn more about transformations see the MSDN website at https://msdn.microsoft.com/en-us/library/dd465326(v=vs.110).aspx.
 
+This task needs access to the Microsoft.Web.XmlTransform.dll to be able to perform the transform action. Depending on your installation and configuration you might want the provide a different location
+for the needed dll.
 
 #### Available options
 * **Build configuration:** The build or transform configuration. Example: release for web.release.config.
 * **File extension:** The file extension to check for transforms without the dot. Example: xml
+* **DLL folder:** The folder which contains the Microsoft.Web.XmlTransform.dll. 
