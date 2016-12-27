@@ -50,6 +50,15 @@
             "required": true,
             "groupName": "advanced",
             "helpMarkDown": "The folder which contains the Microsoft.Web.XmlTransform.dll."
+        },
+        {
+            "name": "MSBuildExePath",
+            "type": "string",
+            "label": "MSBuild.exe path",
+            "defaultValue": "C:\\Program Files (x86)\\MSBuild\\14.0\\Bin\\MSBuild.exe",
+            "required": true,
+            "groupName": "advanced",
+            "helpMarkDown": "Path to MSBuild.exe file."
         }
     ],
     "execution": {
