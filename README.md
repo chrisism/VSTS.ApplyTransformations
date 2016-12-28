@@ -21,3 +21,4 @@ for the needed dll.
 * **Build configuration:** The build or transform configuration. Example: release for web.release.config.
 * **File extension:** The file extension to check for transforms without the dot. Example: xml
 * **DLL folder:** The folder which contains the Microsoft.Web.XmlTransform.dll. 
+* **MSBuild.exe path:** Path to MSBuild.exe file.
