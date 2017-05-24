@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <ProjectGuid>{24CAE972-54D7-4762-B907-FFBC47B2E171}</ProjectGuid>
-    <TypeScriptToolsVersion>2.0</TypeScriptToolsVersion>
+    <TypeScriptToolsVersion>2.2</TypeScriptToolsVersion>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ApplyTransformations</RootNamespace>
@@ -45,6 +45,7 @@
     <Content Include="logo.png" />
     <Content Include="screenshot.jpg" />
     <Content Include="Task\ApplyTransforms.ps1" />
+    <Content Include="Task\vswhere.exe" />
     <None Include="gruntfile.js" />
     <None Include="license.md" />
     <None Include="package.json" />

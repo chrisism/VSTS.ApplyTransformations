@@ -1,9 +1,30 @@
 param(
     [string]$buildConfiguration,
     [string]$extension,
-    [string]$dllFolder,
-    [string]$MSBuildExePath
+    [string]$dllFolder
 )
+
+
+if ($dllFolder -eq $null -OR $dllFolder -eq "") {
+
+    # Resolve path to VS
+    $vswScript = "$PSScriptRoot\vswhere.exe"
+    $vsVersion = & $vswScript  @("-format", "json") | ConvertFrom-Json
+
+    
+    Write-Host "Found Visual Studio $vsVersion.installationVersion at $vsVersion.installationPath"
+
+    if ($vsVersion.installationVersion.StartsWith("15")) {
+        $dllFolder = Join-Path $vsVersion.installationPath "MSBuild\Microsoft\VisualStudio\v15.0\Web\"
+    }
+    
+    if ($vsVersion.installationVersion.StartsWith("14")) {
+        $dllFolder = Join-Path $vsVersion.installationPath "MSBuild\Microsoft\VisualStudio\v14.0\Web\"
+    }
+
+    Write-Host "DLL Path for Microsoft.Web.XmlTransform.dll is $dllFolder"
+}
+
 
 $dllFullPath = Join-Path $dllFolder "Microsoft.Web.XmlTransform.dll"
 Add-Type -Path $dllFullPath
@@ -41,24 +62,16 @@ if($files)
             Copy-Item $org $WorkDir
             Copy-Item $trs $WorkDir
 
-            # write the project build file
-            $BuildXml = @"
-<Project ToolsVersion="4.0" DefaultTargets="TransformWebConfig" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <UsingTask TaskName="TransformXml"
-             AssemblyFile="`$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v14.0\Web\Microsoft.Web.Publishing.Tasks.dll"/>
-  <Target Name="TransformWebConfig">
-    <TransformXml Source="${SourceWork}"
-                  Transform="${TransformWork}"
-                  Destination="${OutputWork}"
-                  StackTrace="true" />
-  </Target>
-</Project>
-"@
-            $BuildXmlWork = Join-Path $WorkDir "build.xml"
-            $BuildXml | Out-File $BuildXmlWork
+            $xmldoc = New-Object Microsoft.Web.XmlTransform.XmlTransformableDocument;
+            $xmldoc.PreserveWhitespace = $true
+            $xmldoc.Load($SourceWork);
+            $transf = New-Object Microsoft.Web.XmlTransform.XmlTransformation($TransformWork);
 
-            # call msbuild
-            & $MSBuildExePath $BuildXmlWork
+            if ($transf.Apply($xmldoc) -eq $false)
+            {
+                throw "Transformation failed."
+            }
+            $xmldoc.Save($OutputWork);
 
             # copy the output to the desired location
             Copy-Item $OutputWork $org
