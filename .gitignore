@@ -2,8 +2,8 @@
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
 
-/.vs/ApplyTransformations/v14/.suo
-/.vs/config/applicationhost.config
-/ApplyTransformations.sln
-/ApplyTransformations/.vscode/tasks.json
+/.vscode/tasks.json
+/node_modules/**
+/_build/**
+settings.tfx.json
 *.vsix
