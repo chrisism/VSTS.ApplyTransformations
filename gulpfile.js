@@ -47,6 +47,8 @@ gulp.task('createPackage', shell.task([
 
 gulp.task('publishPackage', shell.task([
     'tfx extension publish'
+    //command: "tfx extension publish --token <%= settings.publish.token %> --auth-type pat --service-url <%= settings.serviceUrl %>",
+    //command: "tfx build tasks upload --token <%= settings.publish.token %> --auth-type pat --task-path ./ExampleTask --service-url <%= settings.serviceUrl %>",                
 ]));
 
 //gulp.task('publishbuild', gulpSequence('build', 'publishPackage'));
