@@ -12,9 +12,9 @@
     ],
     "demands": [],
     "version": {
-        "Major": "2",
-        "Minor": "0",
-        "Patch": "0"
+        "Major": "__VERSIONMAJOR__",
+        "Minor": "__VERSIONMINOR__",
+        "Patch": "__VERSIONPATCH__"
     },
     "minimumAgentVersion": "1.83.0",
     "instanceNameFormat": "Apply Transformations",
