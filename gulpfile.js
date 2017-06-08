@@ -42,8 +42,8 @@ gulp.task('copyFiles', () => {
  });
 
 gulp.task('createPackage', shell.task([
-    'tfx extension create --manifest-globs ./_build/vss-extension.json'
-]));
+    'tfx extension create --manifest-globs vss-extension.json'
+], {cwd: "./_build/"}));
 
 gulp.task('publishPackage', shell.task([
     'tfx extension publish'
