@@ -6,4 +6,5 @@
 /.vs/config/applicationhost.config
 /ApplyTransformations.sln
 /ApplyTransformations/.vscode/tasks.json
+/ApplyTransformations/settings.tfx.json
 *.vsix
